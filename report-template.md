@@ -3,9 +3,9 @@
 
 ## Initial Training
 ### What did you realize when you tried to submit your predictions? What changes were needed to the output of the predictor to submit your results?
-When I used the Sagemaker Studio the part "| tail -n +1 | head -n 6" worked well and submitted but didn't work on my local computer,so I had to remove the part from the submission.
+When I used the Sagemaker Studio the part "| tail -n +1 | head -n 6" worked well and submitted but didn't work on my local computer,so I had to remove the part from the submission. When making prediction i specified a particular model to use in some cases.
 ### What was the top ranked model that performed?
-The model KNeighborsDist_BAG_L1 performed better with a score value of -84.146423, when i used XGBOOST, the model XGBoost_BAG_L2 performs better with a score value of -210.950986, then for GBM algorithm LightGBM_BAG_L2 performs better with score value -167.987094.
+The model KNeighborsDist_BAG_L1 performed better with a score value of -84.146423, when i used XGBOOST, the model XGBoost_BAG_L1 performs better with a score value of -245.174314, then for GBM algorithm LightGBM_BAG_L2 performs better with score value -174.753472.
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
 From the exploratory i noticed that some columns(windspeed,casual,registered,count) were negatively skewed, others like month,day has more than one mode.
@@ -22,19 +22,17 @@ I would spend more time interpreting the models.
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
 |--|--|--|--|--|
-|initial|-84.146423|-84.146423|0.012451|1.84672|
+|initial|-84.146423|-84.146423|0.004646|1.84672|
 |add_features|-84.146423|-84.146423|0.012451|1.84672|
-|hpo|-101.588176|-101.588176|0.004646|2.35363|
+|hpo|-101.588176|-101.588176|0.004646|2.08108|
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
-TODO: Replace the image below with your own.
 
 ![model_train_score.png](model_train_score.png)
 
 ### Create a line plot showing the top kaggle score for the three (or more) prediction submissions during the project.
 
-TODO: Replace the image below with your own.
 
 ![model_test_score.png](model_test_score.png)
 
